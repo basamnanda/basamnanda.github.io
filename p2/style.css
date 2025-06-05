@@ -1,7 +1,7 @@
-.App-Container{
+.App-container{
     margin: auto;
     padding: 10px;
-    border: 1px solid gray;
+    border:1px solid black;
     border-radius: 10px;
     width: 500px;
 }

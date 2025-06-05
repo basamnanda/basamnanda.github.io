@@ -1,23 +1,23 @@
-const showLogin = () => {
+const showlogin=()=>{
     let str=`
-    <div class='App-Container'>
+    <div class="App-container">
     <h1>Login Form</h1>
-    <p><input type="text" id="txtEmail"></p>
-    <p><input type="password" id="txtPass"></p>
+    <p><input type="text" id="TxtEmail"></p>
+    <p><input type="password" id="TxtPass"></p>
     <p><button>Log In</button></p>
-    <p><button onclick='showRegister()'>Create Account</button></p>
+    <p><button onclick='showregister()'>create Account </p>
     </div>
+    
     `
-    root.innerHTML = str
+    root.innerHTML=str
 }
-
-const showRegister = () => {
-      let str=`
+const showregister=()=>{
+    let str=`
     <h1>Register Form</h1>
-    <p><input type="text" id="txtName"></p>
-     <p><input type="text" id="txtEmail"></p>
-    <p><input type="password" id="txtPass"></p>
-    <button>Register</button>
+    <p><input type="text" id="TxtName"></p>
+    <p><input type="text" id="TxtEmail"></p>
+    <p><input type="password" id="TxtPass"></p>
+    <p><button onclick='showlogin()'> Register </button>
     `
-    root.innerHTML = str
+    root.innerHTML=str
 }
