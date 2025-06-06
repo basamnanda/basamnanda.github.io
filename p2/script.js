@@ -21,3 +21,11 @@ const showregister=()=>{
     `
     root.innerHTML=str
 }
+
+const showHome = () => {
+    let str =`
+    
+    `
+
+
+}
