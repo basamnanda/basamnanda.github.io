@@ -1,6 +1,7 @@
 .App-Row{
     display:flex;
     justify-content: space-around;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .App-Row div{
@@ -8,4 +9,3 @@
     padding: 10px;
     border: 1px solid gray;
 }
-
