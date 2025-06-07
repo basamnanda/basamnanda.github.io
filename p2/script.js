@@ -1,4 +1,5 @@
 const users = [];
+let user={}
 const showLogin = () => {
   let str = `
     <div>
@@ -26,7 +27,30 @@ const showRegister = () => {
   root.innerHTML = str;
 };
 
-const showHome = (user) => {
+const add = () => {
+  const type = document.querySelector("select").value;
+  const amount = Number(document.getElementById("txtAmount").value);
+  if (type == 1) {
+ 
+    user.balance += amount;
+  } else if (type == 2) {
+
+    if (amount <= user.balance) {
+      user.balance -= amount;
+    } else {
+      alert("Insufficient funds!");
+      return;
+    }
+  } else {
+    alert("Please select a valid transaction type");
+    return;
+  }
+
+  showHome();
+};
+
+
+const showHome = () => {
   let str = `
     <h1>Welcome ${user.name}</h1>
     <hr>
@@ -38,36 +62,35 @@ const showHome = (user) => {
       <p>
       <input type='number' id='txtAmount'>
       </p>
-      <p><button>Submit</button>
+      <p><button onclick='add()'>Submit</button>
 
     <button onclick='showLogin()'>Logout</button>
     <hr>
+    
     <p>Current balance:${user.balance}
     `;
   root.innerHTML = str;
 };
 
 const addUser = () => {
-  const user = {
+  const obj = {
     name: document.getElementById("txtName").value,
     email: document.getElementById("txtEmail").value,
     pass: document.getElementById("txtPass").value,
     balance:0
   };
-  users.push(user);
-  console.log(users);
+  users.push(obj);
   showLogin();
 };
 
 const validateUser = () => {
   let email = document.getElementById("txtEmail").value;
   let pass = document.getElementById("txtPass").value;
-  const found = users.find(
-    (user) => user.email === email && user.pass === pass
+   user = users.find(
+    (e) => e.email === email && e.pass === pass
   )
-  console.log(found)
-  if (found) {
-    showHome(found);
+  if (user) {
+    showHome();
   } else {
     dvMsg.innerHTML = "Access Denied";
   }
